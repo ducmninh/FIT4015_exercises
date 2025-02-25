@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "john@gmail.com"
+        },
+        {
+            "id": 2,
+            "name": "Jane Doe",
+            "email": "jane@gmail.com"
+        }],
+    "posts": [
+        {
+            "id": 1,
+            "title": "Post 1",
+            "body": "This is post 1"
+        },
+        {
+            "id": 2,
+            "title": "Post 2",
+            "body": "This is post 2"
+        }]
+}
