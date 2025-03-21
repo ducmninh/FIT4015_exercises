@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Thanh Toán</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card p-4">
+                <h2 class="mb-4">Thông tin Thanh Toán</h2>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="ten" class="form-label">Họ và Tên</label>
+                        <input type="text" class="form-control" id="ten" placeholder="Nhập họ và tên">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="diaChi" class="form-label">Địa Chỉ</label>
+                        <input type="text" class="form-control" id="diaChi" placeholder="Nhập địa chỉ">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Nhập email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="sdt" class="form-label">Số Điện Thoại</label>
+                        <input type="tel" class="form-control" id="sdt" placeholder="Nhập số điện thoại">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phuongThuc" class="form-label">Phương Thức Thanh Toán</label>
+                        <select class="form-select" id="phuongThuc">
+                            <option value="tienmat">Tiền mặt khi nhận hàng</option>
+                            <option value="the">Thẻ tín dụng/ghi nợ</option>
+                            <option value="vnpay">VNPay</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ghichu" class="form-label">Ghi Chú</label>
+                        <textarea class="form-control" id="ghichu" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Thanh Toán</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

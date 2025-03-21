@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+     .img-left
+     .paragraph {
+        margin-bottom: 20px; /* Khoảng cách giữa các đoạn */
+    }
+    .img-left {
+        float: left; /* Đẩy về bên trái */
+        margin-right: 20px; /* Khoảng cách với phần tử bên phải */
+    }    
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+.center-text {
+    text-align: center;
+    max-width: 80%; /* Giới hạn chiều rộng để dễ đọc */
+    margin: 0 auto; /* Căn giữa theo chiều ngang */
+    white-space: pre-line; /* Giữ nguyên ngắt dòng */
+    line-height: 1.5; /* Tăng khoảng cách dòng cho dễ đọc */
+}
+.select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.form-select {
+    width: auto;
+    margin-right: 10px;
+}
+
+.btn-dark {
+    background-color: #5a1a1a;
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: #7d2d2d;
+}
+
+.footer {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #ddd;
+}
+.center-text {
+    text-align: center;
+    white-space: pre-line; /* Hoặc dùng break-word nếu cần */
+}
+.
+navigation bar{
+        margin-bottom: 40px; /* Khoảng cách giữa các đoạn */
+}
+body {
+    background: #f8f9fa;
+}
+.menu-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.menu-item:hover {
+    transform: scale(1.05);
+}
+.btn-add {
+    background-color: #d9534f;
+    color: white;
+}
+.btn-add:hover {
+    background-color: #c9302c;
+}
+
