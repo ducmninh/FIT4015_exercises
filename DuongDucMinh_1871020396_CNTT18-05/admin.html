@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+     <!-- Thanh điều hướng -->
+     <nav class="navbar navbar-expand-lg" style="background-color: purple;">
+        <div class="container">
+            <a class="navbar-brand text-white" href="index.html">Sushi World</a>
+            <img src="./logo.png" alt="" width="100px" height="50px">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="thucdon.html">Thực đơn</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="datban.html">Đặt bàn</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="khuyenmai.html">Khuyến mãi</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="lienhe.html">Liên hệ</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="hinhanh.html">Ảnh Nhà Hàng</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Tin tức</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Tuyển dụng </a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="thucdononl.html">Thực đơn online </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h2 class="text-center">Quản Lý Sản Phẩm</h2>
+        <form id="productForm" class="mb-4">
+            <div class="mb-3">
+                <label for="productName" class="form-label">Tên sản phẩm</label>
+                <input type="text" class="form-control" id="productName" required>
+            </div>
+            <div class="mb-3">
+                <label for="productPrice" class="form-label">Giá (VNĐ)</label>
+                <input type="number" class="form-control" id="productPrice" required>
+            </div>
+            <div class="mb-3">
+                <label for="productImage" class="form-label">Hình ảnh URL</label>
+                <input type="text" class="form-control" id="productImage" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+        </form>
+
+        <h3>Danh sách sản phẩm</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th>Tên</th>
+                    <th>Giá (VNĐ)</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="productList">
+                <!-- Danh sách sản phẩm sẽ được thêm vào đây -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById('productName').value;
+            let price = document.getElementById('productPrice').value;
+            let image = document.getElementById('productImage').value;
+
+            let product = { name, price, image };
+            let products = JSON.parse(localStorage.getItem('products')) || [];
+            products.push(product);
+            localStorage.setItem('products', JSON.stringify(products));
+            displayProducts();
+        });
+
+        function displayProducts() {
+            let productList = document.getElementById('productList');
+            productList.innerHTML = '';
+            let products = JSON.parse(localStorage.getItem('products')) || [];
+            products.forEach((product, index) => {
+                let row = `<tr>
+                    <td><img src="${product.image}" width="50"></td>
+                    <td>${product.name}</td>
+                    <td>${product.price}</td>
+                    <td><button class="btn btn-danger" onclick="deleteProduct(${index})">Xóa</button></td>
+                </tr>`;
+                productList.innerHTML += row;
+            });
+        }
+
+        function deleteProduct(index) {
+            let products = JSON.parse(localStorage.getItem('products')) || [];
+            products.splice(index, 1);
+            localStorage.setItem('products', JSON.stringify(products));
+            displayProducts();
+        }
+
+        displayProducts();
+    </script>
+</body>
+</html>
